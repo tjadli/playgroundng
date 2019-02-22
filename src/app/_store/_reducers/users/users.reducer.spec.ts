@@ -12,7 +12,8 @@ describe('Reducer: USERS', () => {
     users = [{
       id: 1,
       first_name: 'first name',
-      last_name: 'first name'
+      last_name: 'last name',
+      username: 'test'
     }];
   });
 
