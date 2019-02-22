@@ -1,0 +1,19 @@
+<div class="container">
+  <ng-container *ngIf="photos.length; else noPhoto">
+    <ng-masonry-grid [masonryOptions]="{ transitionDuration: '0.8s', gutter: 5 }" [useAnimation]="true"
+      [useImagesLoaded]="true"
+      [scrollAnimationOptions]="{ animationEffect: 'effect-4', minDuration : 0.4, maxDuration : 0.7 }">
+      <!-- Masonry Grid Item -->
+      <ng-masonry-grid-item id="{{'masonry-item-'+i}}" *ngFor="let photo of photos; let i = index;">
+        <!-- Grid Content  -->
+        <img [src]="photo.urls.small" style="max-width: 300px" alt="No image" />
+      </ng-masonry-grid-item>
+    </ng-masonry-grid>
+  </ng-container>
+  <ng-template #noPhoto>
+      <div class="empty_results">
+          <img src="assets/no_result.png" width="120px" />
+          No Photos Found
+      </div>
+  </ng-template>
+</div>

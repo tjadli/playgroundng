@@ -1,0 +1,26 @@
+<div class="results_container">
+  <div class="search_container">
+    <input (ngModelChange)="search()" [(ngModel)]="searchModel" name="search" type="search" class="form-control ds-input"
+      id="search-input" placeholder="Search..." autocomplete="off">
+  </div>
+  <div class="resultas">
+    <ng-container *ngIf="users.length; else noResults">
+      <li class="user_result" *ngFor="let user of users" [routerLink]="['/'+user.username]">
+        {{user.name}}
+      </li>
+    </ng-container>
+    <ng-template #noResults>
+      <div class="empty_results">
+        <img src="assets/no_result.png" width="60%" />
+        <ng-container *ngIf="searchModel.length > 2; else noSearch">
+          No results found
+        </ng-container>
+        <ng-template #noSearch>
+          Please preforme a search to see the results
+        </ng-template>
+      </div>
+      
+    </ng-template>
+  </div>
+</div>
+

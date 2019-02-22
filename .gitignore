@@ -29,6 +29,8 @@ speed-measure-plugin.json
 !.vscode/extensions.json
 
 # misc
+package-lock.json
+yarn-lock.json
 /.sass-cache
 /connect.lock
 /coverage
